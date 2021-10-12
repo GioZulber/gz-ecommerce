@@ -80,13 +80,13 @@ nav{
         }
     }    
 }
-// @media only screen and (max-width:400px){
-//     nav{
-//         .logo{
-//             margin-left: 1.25rem;
-//         }
-//         .icono{
-//             margin-right: 1.25rem;
-//         }
-//     }
-// }
+@media only screen and (max-width:400px){
+    nav{
+        .logo{
+            margin-left: 1.25rem;
+        }
+        .icono{
+            margin-right: 1.25rem;
+        }
+    }
+}
