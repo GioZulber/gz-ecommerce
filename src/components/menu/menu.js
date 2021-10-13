@@ -1,9 +1,11 @@
 import React from "react";
 
-export const Menu = () => {
+export const Menu = ({ className }) => {
+
+    const defaultClass = "enlaces "
 
     return (   
-            <div className="enlaces uno">
+            <div className={defaultClass + className}>
                 <a href='/#' className='active'>Inicio</a>
                 <a href='/#'>Tienda</a>
                 <a href='/#'>Contacto</a>

@@ -19,7 +19,7 @@ export const NavBar = () => {
 				{<span onClick={toggleOpen}> &#9776;</span>}
 			</div>
 
-			{open ? <Menu className="uno"/> : <Menu className="dos"/>}
+			<Menu className={open ? "dos" : "uno" }/>
 		</nav>
 	)
     
