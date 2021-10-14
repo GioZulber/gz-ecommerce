@@ -1,6 +1,6 @@
 nav{
     height: 4.375rem;
-    background-color: #111111;
+    background-color: grey;
     display: flex;
     justify-content: space-between;
     .icono{
@@ -18,13 +18,13 @@ nav{
             border-bottom: 1px solid transparent;
             padding: 0.25rem;
             transition: 0.7s ease-out;
-            color: #ffffff;
+            color: #000000;
             text-decoration: none;
             
         }
         a:hover, .active{
-            border-top: 1px solid coral;
-            border-bottom: 1px solid coral;
+            border-top: 1px solid #f8581e;
+            border-bottom: 1px solid #f8581e;
         }
         
     }
@@ -36,10 +36,24 @@ nav{
             height: inherit;
         }
     }
+    .cartWidget{
+        display: flex;
+        align-items: center;
+        margin-right: 5rem;
+        img{
+            width:  1.5rem;
+        }
+    }
 }
 
-@media only screen and (max-width:800px){
+@media only screen and (max-width:960px){
     nav{
+        .cartWidget{
+            position:relative;
+            left: 8rem;
+            margin-right: 1rem;
+
+        }
         .icono{
             display: flex;
             justify-content: center;
@@ -80,8 +94,12 @@ nav{
         }
     }    
 }
-@media only screen and (max-width:400px){
+@media only screen and (max-width:500px){
     nav{
+        .cartWidget{
+            position: relative;
+            left: 2rem;
+        }
         .logo{
             margin-left: 1.25rem;
         }

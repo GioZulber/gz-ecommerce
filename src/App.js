@@ -1,5 +1,6 @@
 import './scss/App.scss';
 import { NavBar } from './components/navBar/navBar' 
+import { ItemListContainer } from './components/itemListContainer/itemListContainer';
 
 function App() {
   return (
@@ -7,6 +8,9 @@ function App() {
       <header className="App-header">
           <NavBar />
       </header>
+      <main>
+          <ItemListContainer text='Aca irán los productos del catalogo'/>
+      </main>
     </div>
   );
 }
