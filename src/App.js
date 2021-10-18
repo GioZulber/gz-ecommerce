@@ -1,6 +1,7 @@
 import './scss/App.scss';
-import { NavBar } from './components/navBar/navBar' 
-import { ItemListContainer } from './components/itemListContainer/itemListContainer';
+import { NavBar } from './components/NavBar/navBar';
+import { ItemListContainer } from './components/ItemListContainer/itemListContainer';
+
 
 function App() {
   return (
@@ -9,10 +10,10 @@ function App() {
           <NavBar />
       </header>
       <main>
-          <ItemListContainer text='Aca irán los productos del catalogo'/>
+          <ItemListContainer />
       </main>
     </div>
   );
-}
+};
 
 export default App;

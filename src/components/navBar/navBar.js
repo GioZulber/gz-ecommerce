@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import logo from "../../images/logo-final.png";
-import { Menu } from "../menu/menu";
-import { CartWidget } from "../cartWidget/cartWidget";
+import { Menu } from "../Menu/menu";
+import { CartWidget } from "../CartWidget/cartWidget";
 
 export const NavBar = () => {
 
@@ -16,11 +16,11 @@ export const NavBar = () => {
 					<img src={logo} alt='logo' />
 				</div>
 
-				<Menu className={open ? "dos" : "uno" }/>
+				<Menu className={open ? "two" : "one" }/>
 
 				<CartWidget />
 
-				<div className='icono' id='icono'>
+				<div className='icon' id='icon'>
 					{<span onClick={toggleOpen}> &#9776;</span>}
 				</div>
 	

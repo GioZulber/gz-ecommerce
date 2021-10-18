@@ -2,7 +2,7 @@ import React from "react";
 
 export const Menu = ({ className }) => {
 
-    const defaultClass = "enlaces "
+    const defaultClass = "linksMenu "
 
     return (   
             <div className={defaultClass + className}>

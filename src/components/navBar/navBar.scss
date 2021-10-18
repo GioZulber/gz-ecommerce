@@ -3,11 +3,11 @@ nav{
     background-color: grey;
     display: flex;
     justify-content: space-between;
-    .icono{
+    .icon{
         display: none;
         color: #ffff;
     }
-    .enlaces{
+    .linksMenu{
         display: flex;
         height: 100%;
         width: 30%;
@@ -40,6 +40,7 @@ nav{
         display: flex;
         align-items: center;
         margin-right: 5rem;
+        cursor: pointer;
         img{
             width:  1.5rem;
         }
@@ -54,7 +55,7 @@ nav{
             margin-right: 1rem;
 
         }
-        .icono{
+        .icon{
             display: flex;
             justify-content: center;
             height: 4.375rem;
@@ -67,11 +68,12 @@ nav{
             margin-right: 2.5rem;
 
         }
-        .enlaces{
+        .linksMenu{
             position: fixed;
             height: 100vh;
             right: 0;
             width: 100%;
+            z-index: 1;
             flex-direction: column;
             transition: all 1s ease;
             /* fallback for old browsers */
@@ -80,13 +82,13 @@ nav{
             background: linear-gradient(to right, #eea849, #f46b45);
             /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         }
-        .uno {
+        .one {
 
             -webkit-clip-path: circle(0% at 100% 0%);
             clip-path: circle(0% at 100% 0%);
     
         }
-        .dos {
+        .two {
     
             -webkit-clip-path: circle(150% at 100% 0%);
             clip-path: circle(150% at 100% 0%);
@@ -103,7 +105,7 @@ nav{
         .logo{
             margin-left: 1.25rem;
         }
-        .icono{
+        .icon{
             margin-right: 1.25rem;
         }
     }

@@ -1,0 +1,11 @@
+.cardCounter{
+    display: flex;
+    text-align: center;
+    z-index: 0; 
+    .divCardCounter{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+}

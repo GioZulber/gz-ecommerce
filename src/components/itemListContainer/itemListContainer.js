@@ -1,4 +1,5 @@
-export const ItemListContainer = (greeting) => {
+import { ItemCount } from "../ItemCount/itemCount";
 
-    return <h3> {greeting.text} </h3>
+export const ItemListContainer = () => {
+    return <ItemCount initial={1} stock={5}/>
 };
