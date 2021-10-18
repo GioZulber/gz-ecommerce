@@ -1,10 +1,10 @@
 import React, {useState} from "react";
 import { Card, Button } from "react-bootstrap";
-export const ItemCount = ({ stock, initial }) => {
+export const ItemCount = ({ stock, initial, onAdd }) => {
     const [count, setCount] = useState(initial);
 
     const onAddClick = () => {
-        if(count >= 1 && count < 5 ){
+        if(count >= 1 && count < stock ){
             setCount(count + 1);
         }else{
             alert("Alcanzaste el stock limite");
