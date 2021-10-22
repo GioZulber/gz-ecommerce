@@ -1,19 +1,19 @@
 @import "~bootstrap/scss/bootstrap";
-@import '../components/navBar/navBar.scss' ;
-@import '../components/itemCount/itemCounter.scss';
+@import "../components/navBar/navBar.scss";
+@import "../components/itemCount/itemCounter.scss";
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    font-size: 1rem;
+body {
+  font-size: 1rem;
 }
 
-main{
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
+main {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
 }

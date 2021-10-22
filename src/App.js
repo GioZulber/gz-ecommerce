@@ -1,19 +1,18 @@
-import './scss/App.scss';
-import { NavBar } from './components/NavBar/navBar';
-import { ItemListContainer } from './components/ItemListContainer/itemListContainer';
-
+import "./scss/App.scss";
+import { NavBar } from "./components/NavBar/navBar";
+import { ItemListContainer } from "./components/ItemListContainer/itemListContainer";
 
 function App() {
   return (
     <div>
       <header className="App-header">
-          <NavBar />
+        <NavBar />
       </header>
       <main>
-          <ItemListContainer />
+        <ItemListContainer />
       </main>
     </div>
   );
-};
+}
 
 export default App;

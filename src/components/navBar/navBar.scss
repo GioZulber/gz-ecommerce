@@ -1,112 +1,105 @@
-nav{
-    height: 4.375rem;
-    background-color: grey;
+nav {
+  height: 4.375rem;
+  background-color: grey;
+  display: flex;
+  justify-content: space-between;
+  .icon {
+    display: none;
+    color: #ffff;
+  }
+  .linksMenu {
     display: flex;
-    justify-content: space-between;
-    .icon{
-        display: none;
-        color: #ffff;
+    height: 100%;
+    width: 30%;
+    justify-content: space-around;
+    align-items: center;
+    a {
+      border-top: 1px solid transparent;
+      border-bottom: 1px solid transparent;
+      padding: 0.25rem;
+      transition: 0.7s ease-out;
+      color: #000000;
+      text-decoration: none;
     }
-    .linksMenu{
-        display: flex;
-        height: 100%;
-        width: 30%;
-        justify-content: space-around;
-        align-items: center;
-        a{
-            border-top: 1px solid transparent;
-            border-bottom: 1px solid transparent;
-            padding: 0.25rem;
-            transition: 0.7s ease-out;
-            color: #000000;
-            text-decoration: none;
-            
-        }
-        a:hover, .active{
-            border-top: 1px solid #f8581e;
-            border-bottom: 1px solid #f8581e;
-        }
-        
+    a:hover,
+    .active {
+      border-top: 1px solid #f8581e;
+      border-bottom: 1px solid #f8581e;
     }
-    .logo{
-        height: 100%;
-        margin-left: 5rem;
-        img{
-            object-fit: cover;
-            height: inherit;
-        }
+  }
+  .logo {
+    height: 100%;
+    margin-left: 5rem;
+    img {
+      object-fit: cover;
+      height: inherit;
     }
-    .cartWidget{
-        display: flex;
-        align-items: center;
-        margin-right: 5rem;
-        cursor: pointer;
-        img{
-            width:  1.5rem;
-        }
+  }
+  .cartWidget {
+    display: flex;
+    align-items: center;
+    margin-right: 5rem;
+    cursor: pointer;
+    img {
+      width: 1.5rem;
     }
+  }
 }
 
-@media only screen and (max-width:960px){
-    nav{
-        .cartWidget{
-            position:relative;
-            left: 8rem;
-            margin-right: 1rem;
-
-        }
-        .icon{
-            display: flex;
-            justify-content: center;
-            height: 4.375rem;
-            align-items: center;
-            color: #ffff;
-            background: transparent;
-            z-index: 100;  
-            cursor: pointer;
-            padding: 1.25rem;
-            margin-right: 2.5rem;
-
-        }
-        .linksMenu{
-            position: fixed;
-            height: 100vh;
-            right: 0;
-            width: 100%;
-            z-index: 1;
-            flex-direction: column;
-            transition: all 1s ease;
-            /* fallback for old browsers */
-            background: -webkit-linear-gradient(to right, #eea849, #f46b45);
-            /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to right, #eea849, #f46b45);
-            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        }
-        .one {
-
-            -webkit-clip-path: circle(0% at 100% 0%);
-            clip-path: circle(0% at 100% 0%);
-    
-        }
-        .two {
-    
-            -webkit-clip-path: circle(150% at 100% 0%);
-            clip-path: circle(150% at 100% 0%);
-    
-        }
-    }    
-}
-@media only screen and (max-width:500px){
-    nav{
-        .cartWidget{
-            position: relative;
-            left: 2rem;
-        }
-        .logo{
-            margin-left: 1.25rem;
-        }
-        .icon{
-            margin-right: 1.25rem;
-        }
+@media only screen and (max-width: 960px) {
+  nav {
+    .cartWidget {
+      position: relative;
+      left: 8rem;
+      margin-right: 1rem;
     }
+    .icon {
+      display: flex;
+      justify-content: center;
+      height: 4.375rem;
+      align-items: center;
+      color: #ffff;
+      background: transparent;
+      z-index: 100;
+      cursor: pointer;
+      padding: 1.25rem;
+      margin-right: 2.5rem;
+    }
+    .linksMenu {
+      position: fixed;
+      height: 100vh;
+      right: 0;
+      width: 100%;
+      z-index: 1;
+      flex-direction: column;
+      transition: all 1s ease;
+      /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #eea849, #f46b45);
+      /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #eea849, #f46b45);
+      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+    .one {
+      -webkit-clip-path: circle(0% at 100% 0%);
+      clip-path: circle(0% at 100% 0%);
+    }
+    .two {
+      -webkit-clip-path: circle(150% at 100% 0%);
+      clip-path: circle(150% at 100% 0%);
+    }
+  }
+}
+@media only screen and (max-width: 500px) {
+  nav {
+    .cartWidget {
+      position: relative;
+      left: 2rem;
+    }
+    .logo {
+      margin-left: 1.25rem;
+    }
+    .icon {
+      margin-right: 1.25rem;
+    }
+  }
 }

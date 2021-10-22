@@ -1,5 +1,7 @@
-import { ItemCount } from "../ItemCount/itemCount";
+import { Item } from "../Item/item";
 
 export const ItemListContainer = () => {
-    return <ItemCount initial={1} stock={5}/>
+  return <Item />;
+
+  // <ItemCount initial={1} stock={5} />;
 };
