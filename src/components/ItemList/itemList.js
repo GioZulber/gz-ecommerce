@@ -4,43 +4,33 @@ import Products from "../../Products.json";
 export const ItemList = () => {
   const [products, setProducts] = useState([]);
 
-  const getData = (data) =>
-    new Promise((resolve, reject) => {
+  useEffect(() => {
+    const p = new Promise((resolve) => {
       setTimeout(() => {
-        if (data) {
-          resolve(data);
-        } else {
-          reject("Esta vacio");
-        }
+        resolve(Products);
       }, 2000);
     });
-  useEffect(() => {
-    getData(Products)
-      .then((result) => setProducts(result))
-      .catch((err) => console.log(err));
+    p.then((result) => {
+      console.log(result);
+      setProducts(result);
+    }).catch((err) => {
+      console.log("Catch: " + err);
+    });
   }, []);
-
-  //De esta manera no anduvo
-
-  // useEffect(() => {
-  //   const p = new Promise((resolve) => {
-  //     setTimeout(() => {
-  //       resolve(Products);
-  //     }, 2000);
-  //   });
-  //   p.then((result) => {
-  //     console.log(result);
-  //     setProducts(result);
-  //   }).catch((err) => {
-  //     console.log("Catch: " + err);
-  //   });
-  // }, []);
 
   return (
     <>
-      {products.map(({ items }) => (
-        <Item items={items} key={items.id} />
-      ))}
+      {products.length
+        ? products.map(({ id, title, description, price, photo }) => (
+            <Item
+              title={title}
+              description={description}
+              price={price}
+              photo={photo}
+              key={id}
+            />
+          ))
+        : "Loading..."}
     </>
   );
 };

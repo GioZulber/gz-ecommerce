@@ -1,7 +1,7 @@
-import { Item } from "../Item/item";
+import { ItemList } from "../ItemList/itemList";
 
 export const ItemListContainer = () => {
-  return <Item />;
+  return <ItemList />;
 
   // <ItemCount initial={1} stock={5} />;
 };
