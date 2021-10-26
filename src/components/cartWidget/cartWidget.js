@@ -1,9 +1,9 @@
-import cartWidget from "../../images/shopping-cart.png";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 export const CartWidget = () => {
   return (
     <div className="cartWidget">
-      <img src={cartWidget} alt="cart-widget" />
+      <FontAwesomeIcon icon={faShoppingCart} />
     </div>
   );
 };

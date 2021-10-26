@@ -1,5 +1,12 @@
-.cardCounter {
+.cardItem {
+  margin: 1rem;
   display: flex;
   text-align: center;
+  align-content: center;
   z-index: 0;
+  .cardPrice {
+    background-color: #b51e1e;
+    color: #000000;
+    border-radius: 1rem;
+  }
 }

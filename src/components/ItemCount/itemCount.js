@@ -3,7 +3,7 @@ import { Button } from "react-bootstrap";
 export const ItemCount = ({ stock, initial, onAdd }) => {
   const [count, setCount] = useState(initial);
 
-  const onAddClick = () => {
+  const handleAdd = () => {
     if (count >= 1 && count < stock) {
       setCount(count + 1);
     } else {
@@ -17,6 +17,7 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
       alert("No puede agregar 0 productos.");
     }
   };
+
   return (
     <div className="divCardCounter">
       <Button onClick={onDecreace} variant="dark">
@@ -24,7 +25,7 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
         -{" "}
       </Button>
       <p> {count} </p>
-      <Button onClick={onAddClick} variant="dark">
+      <Button onClick={handleAdd} variant="dark">
         {" "}
         +{" "}
       </Button>

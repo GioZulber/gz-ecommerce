@@ -21,15 +21,7 @@ export const ItemList = () => {
   return (
     <>
       {products.length
-        ? products.map(({ id, title, description, price, photo }) => (
-            <Item
-              title={title}
-              description={description}
-              price={price}
-              photo={photo}
-              key={id}
-            />
-          ))
+        ? products.map((product) => <Item items={product} key={product.id} />)
         : "Loading..."}
     </>
   );

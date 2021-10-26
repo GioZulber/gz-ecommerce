@@ -1,12 +1,12 @@
 import { Card } from "react-bootstrap";
-export const Item = ({ title, description, price, photo }) => {
+export const Item = ({ items }) => {
   return (
-    <Card className="cardCounter" style={{ width: "18rem" }}>
-      <Card.Img variant="top" src={photo} />
+    <Card className="cardItem" style={{ width: "16rem" }}>
+      <Card.Img variant="top" src={items.photo} />
       <Card.Body>
-        <Card.Title>{title}</Card.Title>
-        <Card.Text> {description} </Card.Text>
-        <p> ${price}</p>
+        <Card.Title>{items.title}</Card.Title>
+        <Card.Text> {items.description} </Card.Text>
+        <p className="cardPrice"> ${items.price}</p>
       </Card.Body>
     </Card>
   );

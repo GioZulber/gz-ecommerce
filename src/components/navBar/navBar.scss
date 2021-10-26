@@ -1,6 +1,6 @@
 nav {
   height: 4.375rem;
-  background-color: grey;
+  background-color: #b51e1e;
   display: flex;
   justify-content: space-between;
   .icon {
@@ -23,8 +23,8 @@ nav {
     }
     a:hover,
     .active {
-      border-top: 1px solid #f8581e;
-      border-bottom: 1px solid #f8581e;
+      border-top: 1px solid #0d0d0d;
+      border-bottom: 1px solid #0d0d0d;
     }
   }
   .logo {
@@ -40,9 +40,8 @@ nav {
     align-items: center;
     margin-right: 5rem;
     cursor: pointer;
-    img {
-      width: 1.5rem;
-    }
+    font-size: 1.5rem;
+    color: #0d0d0d;
   }
 }
 
@@ -64,6 +63,7 @@ nav {
       cursor: pointer;
       padding: 1.25rem;
       margin-right: 2.5rem;
+      font-size: 1.3rem;
     }
     .linksMenu {
       position: fixed;
@@ -74,9 +74,9 @@ nav {
       flex-direction: column;
       transition: all 1s ease;
       /* fallback for old browsers */
-      background: -webkit-linear-gradient(to right, #eea849, #f46b45);
+      background: -webkit-linear-gradient(to right, #721111, #b51e1e);
       /* Chrome 10-25, Safari 5.1-6 */
-      background: linear-gradient(to right, #eea849, #f46b45);
+      background: linear-gradient(to right, #721111, #b51e1e);
       /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     }
     .one {
