@@ -1,10 +1,12 @@
 @import "~bootstrap/scss/bootstrap";
+@import "../scss/variables.scss";
 @import "../components/navBar/navBar.scss";
-@import "../components/ItemListContainer/itemListContainer.scss";
+@import "../components/Containers/ItemListContainer/itemListContainer.scss";
 @import "../components/ItemList/itemList.scss";
+@import "../components/Containers/ItemDetailContainer/itemDetailContainer.scss";
 @import "../components/Item/item.scss";
 @import "../components/itemCount/itemCounter.scss";
-
+@import "../components/ItemDetail/itemDetail.scss";
 * {
   margin: 0;
   padding: 0;

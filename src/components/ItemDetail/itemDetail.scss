@@ -1,0 +1,167 @@
+@import "../../scss/variables.scss";
+
+.containerItem {
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  width: 32.5rem;
+  height: 100%;
+  background: #ffffff;
+  box-shadow: 0.3125rem 0.3125rem 0.9375rem 0.9375rem rgba($redDark, 0.5);
+  border-radius: 0.625rem;
+  p {
+    font-size: 0.6em;
+    color: $red;
+    letter-spacing: 0.0625rem;
+  }
+  h1 {
+    font-size: 1.2em;
+    color: $dark;
+    margin-top: -0.3125rem;
+  }
+
+  h2 {
+    color: $dark;
+    margin-top: -0.3125rem;
+  }
+  .imgDetail {
+    width: 18.125rem;
+    margin-top: 2.9375rem;
+  }
+  .slideshow-buttons {
+    top: 70%;
+    display: none;
+  }
+
+  .oneD,
+  .twoD,
+  .threeD,
+  .fourD {
+    position: absolute;
+    width: 0.4375rem;
+    height: 0.4375rem;
+    border-radius: 50%;
+    background: $redDark;
+  }
+
+  .one {
+    left: 22%;
+  }
+  .two {
+    left: 27%;
+  }
+  .three {
+    left: 32%;
+  }
+  .four {
+    left: 37%;
+  }
+
+  .product {
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    top: 10%;
+    left: 60%;
+  }
+
+  .desc {
+    text-transform: none;
+    letter-spacing: 0;
+    margin-bottom: 1.0625rem;
+    color: $dark;
+    font-size: 0.7em;
+    line-height: 1.6em;
+    margin-right: 1.5625rem;
+    text-align: justify;
+  }
+  .buttonCardDetail {
+    background: $red;
+    padding: 0.625rem;
+    display: inline-block;
+    outline: 0;
+    border: 0;
+    margin: -0.0625rem;
+    border-radius: 0.125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.0625rem;
+    color: $white;
+    cursor: pointer;
+    &:hover {
+      background: rgba($redDark, 0.5);
+      transition: all 0.4s ease-in-out;
+    }
+  }
+
+  .add {
+    width: 90%;
+  }
+
+  .like {
+    width: 22%;
+  }
+
+  .sizes {
+    display: grid;
+    color: $dark;
+    grid-template-columns: repeat(auto-fill, 30px);
+    width: 60%;
+    grid-gap: 0.25rem;
+    margin-left: 1.25rem;
+    margin-top: 0.3125rem;
+    margin-bottom: 1rem;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .pick {
+    margin-top: 0.6875rem;
+    margin-bottom: 0;
+    margin-left: 1.25rem;
+  }
+
+  .size {
+    padding: 0.5625rem;
+    border: 0.0625rem solid $dark;
+    font-size: 0.7em;
+    text-align: center;
+    &:hover {
+      background: $red;
+      color: $white;
+      transition: all 0.4s ease-in-out;
+    }
+  }
+
+  .focus {
+    background: rgba($redDark, 0.5);
+    color: $white;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .containerItem {
+    width: 100%;
+    height: 100%;
+    .product {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      top: 0%;
+      bottom: 0%;
+      left: 0%;
+    }
+    .imgDetail {
+      width: 17.125rem;
+    }
+    .desc {
+      text-align: center;
+    }
+    .add {
+      width: 100%;
+    }
+    .sizes {
+      width: 90%;
+    }
+  }
+}

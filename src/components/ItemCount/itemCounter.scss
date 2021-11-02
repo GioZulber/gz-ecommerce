@@ -1,11 +1,12 @@
-.cardCounter {
+.counter {
   display: flex;
-  text-align: center;
-  z-index: 0;
-  .divCardCounter {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
-    align-items: center;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  .buttonCounter {
+    margin: 1rem;
+  }
+  .pCounter {
+    font-size: 1em;
   }
 }

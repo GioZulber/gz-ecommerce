@@ -1,3 +1,4 @@
+@import "../../scss/variables.scss";
 .cardItem {
   margin: 1rem;
   display: flex;
@@ -5,8 +6,12 @@
   align-content: center;
   z-index: 0;
   .cardPrice {
-    background-color: #b51e1e;
+    font-weight: bolder;
     color: #000000;
     border-radius: 1rem;
+  }
+  .buttonItem {
+    background-color: $red;
+    width: 100%;
   }
 }

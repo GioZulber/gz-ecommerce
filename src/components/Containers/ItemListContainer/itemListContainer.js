@@ -1,4 +1,4 @@
-import { ItemList } from "../ItemList/itemList";
+import { ItemList } from "../../ItemList/itemList";
 
 export const ItemListContainer = () => {
   return (
@@ -6,6 +6,4 @@ export const ItemListContainer = () => {
       <ItemList />
     </div>
   );
-
-  // <ItemCount initial={1} stock={5} />;
 };

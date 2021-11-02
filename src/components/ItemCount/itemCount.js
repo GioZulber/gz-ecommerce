@@ -19,13 +19,13 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
   };
 
   return (
-    <div className="divCardCounter">
-      <Button onClick={onDecreace} variant="dark">
+    <div className="counter">
+      <Button className="buttonCounter" onClick={onDecreace} variant="dark">
         {" "}
         -{" "}
       </Button>
-      <p> {count} </p>
-      <Button onClick={handleAdd} variant="dark">
+      <p className="pCounter"> {count} </p>
+      <Button className="buttonCounter" onClick={handleAdd} variant="dark">
         {" "}
         +{" "}
       </Button>
