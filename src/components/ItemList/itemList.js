@@ -5,16 +5,10 @@ export const ItemList = () => {
   const [products, setProducts] = useState(null);
 
   useEffect(() => {
-    fetch("https://v1-sneakers.p.rapidapi.com/v1/sneakers?limit=20", {
-      method: "GET",
-      headers: {
-        "x-rapidapi-host": "v1-sneakers.p.rapidapi.com",
-        "x-rapidapi-key": "0ad7d9e15dmshc74262e27cf3876p1f7f76jsn1c6f9e7d93b1",
-      },
-    })
-      .then((response) => response.json())
+    fetch("https://fakestoreapi.com/products")
+      .then((res) => res.json())
       .then((data) => {
-        setProducts(data.results);
+        setProducts(data);
       })
       .catch((err) => {
         console.error(err);
@@ -31,7 +25,6 @@ export const ItemList = () => {
     //   console.log("Catch: " + err);
     // });
   }, []);
-  console.log(products);
   return (
     <>
       {products?.map((product) => (
