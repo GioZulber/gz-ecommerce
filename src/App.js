@@ -3,11 +3,12 @@ import { NavBar } from "./components/NavBar/navBar";
 import { ItemListContainer } from "./components/Containers/ItemListContainer/itemListContainer";
 import { ItemDetailContainer } from "./components/Containers/ItemDetailContainer/itemDetailContainer";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Footer } from "./components/Footer/footer";
 
 const routes = [
   { path: "/", element: <ItemListContainer /> },
   { path: "/details/:itemId", element: <ItemDetailContainer /> },
-  { path: "/brand" },
+  { path: "/brands/:brandId" },
 ];
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           </Route>
         ))}
       </Switch>
+      <Footer />
     </BrowserRouter>
   );
 }
