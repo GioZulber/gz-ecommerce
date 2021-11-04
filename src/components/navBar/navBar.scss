@@ -24,8 +24,16 @@ nav {
     }
     a:hover,
     .active {
+      color: $white;
       border-top: 1px solid $dark;
       border-bottom: 1px solid $dark;
+    }
+    .nav-link:focus,
+    .nav-link:hover {
+      color: $white;
+    }
+    .dropdown-menu {
+      padding: 0%;
     }
   }
   .logo {

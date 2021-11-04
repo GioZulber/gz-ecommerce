@@ -1,0 +1,30 @@
+@import "../../scss/variables.scss";
+
+footer {
+  background-color: $dark;
+  padding: 0.01rem;
+  .divContainer {
+    .divFooter {
+      display: flex;
+      justify-content: space-between;
+      .divFooterTitle {
+        color: $white;
+        font-size: 1em;
+        font-weight: bolder;
+      }
+      .divFooterList {
+        margin: 0%;
+        padding: 0%;
+        list-style-type: none;
+        color: grey;
+        li:hover {
+          cursor: pointer;
+          color: $redDark;
+        }
+        .iconsFooter {
+          font-size: 1.4em;
+        }
+      }
+    }
+  }
+}

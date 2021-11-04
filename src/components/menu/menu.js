@@ -2,28 +2,44 @@ import {
   faHome,
   faIdBadge,
   faShoppingBag,
-  faStore,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
 
+import { NavLink } from "react-router-dom";
+import { Nav, NavDropdown } from "react-bootstrap";
+const categories = [
+  { url: "jordan", label: "Jordan" },
+  { url: "nike", label: "Nike" },
+  { url: "reebok", label: "Reebok" },
+  { url: "adidas", label: "Adidas" },
+];
 export const Menu = ({ className }) => {
   const defaultClass = "linksMenu ";
-
   return (
     <div className={defaultClass + className}>
-      <a href="/#" className="active">
+      <NavLink to={`/`} activeClassName="active">
         <FontAwesomeIcon icon={faHome} /> Inicio
-      </a>
-      <a href="/#">
-        <FontAwesomeIcon icon={faStore} /> Tienda
-      </a>
-      <a href="/#">
+      </NavLink>
+      <Nav>
+        <NavDropdown
+          id="nav-dropdown-dark"
+          title="Categorias"
+          menuVariant="dark"
+        >
+          {categories.map(({ url, label }) => (
+            <NavLink key={url} to={`/category/${url}`} activeClassName="active">
+              <NavDropdown.Item href="#action/3.1">{label}</NavDropdown.Item>
+            </NavLink>
+          ))}
+        </NavDropdown>
+      </Nav>
+
+      <NavLink to="/contacto" activeClassName="active">
         <FontAwesomeIcon icon={faIdBadge} /> Contacto
-      </a>
-      <a href="/#">
+      </NavLink>
+      <NavLink to="/ayuda" activeClassName="active">
         <FontAwesomeIcon icon={faShoppingBag} /> Como comprar
-      </a>
+      </NavLink>
     </div>
   );
 };

@@ -3,13 +3,13 @@ import { Card } from "react-bootstrap";
 
 export const ItemDetail = ({ item }) => {
   return (
-    <div className="containerItem container">
+    <div className="containerItem">
       <div>
-        <Card.Img className="imgDetail" variant="top" src={item.image} />
+        <Card.Img className="imgDetail" variant="top" src={item.photo} />
         {/* <img className="cardImg" src="http://mistillas.cl/wp-content/uploads/2018/04/Nike-Epic-React-Flyknit-%E2%80%9CPearl-Pink%E2%80%9D-01.jpg"/> */}
       </div>
       <div className="product">
-        <p>{item.category}</p>
+        <p>{item.brand}</p>
         <h1 className="h1CardDetail">{item.title}</h1>
         <h2>${item.price}</h2>
         <p className="desc">{item.description}</p>

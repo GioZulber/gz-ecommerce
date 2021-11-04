@@ -1,29 +1,19 @@
 import { useEffect, useState } from "react";
 import { Item } from "../Item/item";
-// import Products from "../../Products.json";
+import Products from "../../Products.json";
 export const ItemList = () => {
   const [products, setProducts] = useState(null);
-
+  const getItem = (data) =>
+    new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(data);
+        console.log(data);
+      }, 2000);
+    });
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((data) => {
-        setProducts(data);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-    // const p = new Promise((resolve) => {
-    //   setTimeout(() => {
-    //     resolve(Products);
-    //   }, 2000);
-    // });
-    // p.then((result) => {
-    //   console.log(result);
-    //   setProducts(result);
-    // }).catch((err) => {
-    //   console.log("Catch: " + err);
-    // });
+    getItem(Products)
+      .then((result) => setProducts(result))
+      .catch((err) => console.log("Catch: " + err));
   }, []);
   return (
     <>

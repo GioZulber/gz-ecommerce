@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { ItemDetail } from "../../ItemDetail/itemDetail";
+import { Item } from "../../Item/item";
 import Products from "../../../Products.json";
-export const ItemDetailContainer = () => {
-  const { itemId } = useParams();
+
+export const ItemCategoryContainer = () => {
+  const { categoryBrand } = useParams();
   const [product, setProduct] = useState(null);
   const getItem = (data) =>
     new Promise((resolve) => {
@@ -14,17 +15,22 @@ export const ItemDetailContainer = () => {
   useEffect(() => {
     getItem(Products)
       .then((result) =>
-        setProduct(result.find((element) => element.id === itemId))
+        setProduct(result.filter((element) => element.brand === categoryBrand))
       )
       .catch((err) => console.log("Catch: " + err));
-  }, [itemId]);
+  }, [categoryBrand]);
   console.log(product);
 
   if (!product) return null;
   return (
     <>
-      <div className="container">
-        {product ? <ItemDetail key={product.id} item={product} /> : null}
+      <h1 className="titelCategory">
+        Esta en la categoria de: {categoryBrand}
+      </h1>
+      <div className="itemListContainer container">
+        {product?.map((product) => (
+          <Item items={product} key={product.id} />
+        ))}
       </div>
     </>
   );

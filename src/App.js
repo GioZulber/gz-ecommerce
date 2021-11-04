@@ -4,11 +4,13 @@ import { ItemListContainer } from "./components/Containers/ItemListContainer/ite
 import { ItemDetailContainer } from "./components/Containers/ItemDetailContainer/itemDetailContainer";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Footer } from "./components/Footer/footer";
+import { ItemCategoryContainer } from "./components/Containers/ItemCategoryContainer/itemCategoryContainer";
 
 const routes = [
   { path: "/", element: <ItemListContainer /> },
   { path: "/details/:itemId", element: <ItemDetailContainer /> },
-  { path: "/brands/:brandId" },
+  { path: "/category", element: <ItemListContainer /> },
+  { path: "/category/:categoryBrand", element: <ItemCategoryContainer /> },
 ];
 
 function App() {
