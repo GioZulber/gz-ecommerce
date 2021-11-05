@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# Bienvenido a mi Proyecto del curso de React JS. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+El proyecto consta de realizar un e-commerce. 
+Este es el link de netlify: https://618456cdcdbcda0007288281--gz-ecommerce.netlify.app/}
 
 ## Available Scripts
 
