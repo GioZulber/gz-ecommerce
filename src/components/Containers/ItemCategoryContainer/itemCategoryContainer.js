@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Item } from "../../Item/item";
+import { Loader } from "../../Loader/loader";
 import Products from "../../../Products.json";
 
 export const ItemCategoryContainer = () => {
   const { categoryBrand } = useParams();
-  const [product, setProduct] = useState(null);
+  const [product, setProduct] = useState([]);
   const getItem = (data) =>
     new Promise((resolve) => {
       setTimeout(() => {
@@ -28,9 +29,11 @@ export const ItemCategoryContainer = () => {
         Esta en la categoria de: {categoryBrand}
       </h1>
       <div className="itemListContainer container">
-        {product?.map((product) => (
-          <Item items={product} key={product.id} />
-        ))}
+        {product.length ? (
+          product?.map((product) => <Item items={product} key={product.id} />)
+        ) : (
+          <Loader />
+        )}
       </div>
     </>
   );

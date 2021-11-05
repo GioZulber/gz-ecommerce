@@ -5,17 +5,25 @@ import { ItemDetailContainer } from "./components/Containers/ItemDetailContainer
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Footer } from "./components/Footer/footer";
 import { ItemCategoryContainer } from "./components/Containers/ItemCategoryContainer/itemCategoryContainer";
-
+// import { CartContext } from "./context/cartContext";
 const routes = [
   { path: "/", element: <ItemListContainer /> },
   { path: "/details/:itemId", element: <ItemDetailContainer /> },
   { path: "/category", element: <ItemListContainer /> },
   { path: "/category/:categoryBrand", element: <ItemCategoryContainer /> },
 ];
+// const [cartContextDou, setContextDou] = useState(false);
+
+// const switchCartContext = () => {
+//   setContextDou(!cartContextDou);
+// };
 
 function App() {
   return (
     <BrowserRouter>
+      {/* <CartContext.Provider
+        value={{ cartContextDou, switchCartContext }}
+      ></CartContext.Provider>; */}
       <NavBar />
       <Switch>
         {routes.map(({ path, element }, index) => (

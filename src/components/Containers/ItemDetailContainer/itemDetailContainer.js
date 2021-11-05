@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ItemDetail } from "../../ItemDetail/itemDetail";
 import Products from "../../../Products.json";
+import { Loader } from "../../Loader/loader";
 export const ItemDetailContainer = () => {
   const { itemId } = useParams();
-  const [product, setProduct] = useState(null);
+  const [product, setProduct] = useState([]);
   const getItem = (data) =>
     new Promise((resolve) => {
       setTimeout(() => {
@@ -24,7 +25,11 @@ export const ItemDetailContainer = () => {
   return (
     <>
       <div className="container">
-        {product ? <ItemDetail key={product.id} item={product} /> : null}
+        {product.length ? (
+          product.map(<ItemDetail key={product.id} item={product} />)
+        ) : (
+          <Loader />
+        )}
       </div>
     </>
   );

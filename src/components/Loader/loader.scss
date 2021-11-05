@@ -1,0 +1,35 @@
+.containerSpinner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .spinner {
+    border: 5px solid $dark;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border-bottom: 6px solid var($redDark);
+    animation-name: spin;
+    margin: 15px;
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    border-bottom-color: $redLight;
+  }
+  20% {
+    transform: rotate(45deg);
+    border-bottom-color: $redDark;
+  }
+  40% {
+    transform: rotate(-45deg);
+  }
+  80% {
+    border-bottom-color: $red;
+  }
+  100% {
+    transform: rotate(1800deg);
+    border-bottom-color: $red;
+  }
+}
