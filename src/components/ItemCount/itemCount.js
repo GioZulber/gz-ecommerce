@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
+
 export const ItemCount = ({ stock, initial, onAdd }) => {
   const [count, setCount] = useState(initial);
 
@@ -7,7 +8,7 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
     if (count >= 1 && count < stock) {
       setCount(count + 1);
     } else {
-      alert("Alcanzaste el stock limite");
+      alert("Alcanzo el limite de stock");
     }
   };
   const onDecreace = () => {
@@ -25,6 +26,7 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
         -{" "}
       </Button>
       <p className="pCounter"> {count} </p>
+      {/* probar con un ternario */}
       <Button className="buttonCounter" onClick={handleAdd} variant="dark">
         {" "}
         +{" "}

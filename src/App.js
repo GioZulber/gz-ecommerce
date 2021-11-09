@@ -5,12 +5,14 @@ import { ItemDetailContainer } from "./components/Containers/ItemDetailContainer
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Footer } from "./components/Footer/footer";
 import { ItemCategoryContainer } from "./components/Containers/ItemCategoryContainer/itemCategoryContainer";
+import { Cart } from "./components/Cart/cart";
 // import { CartContext } from "./context/cartContext";
 const routes = [
   { path: "/", element: <ItemListContainer /> },
   { path: "/details/:itemId", element: <ItemDetailContainer /> },
   { path: "/category", element: <ItemListContainer /> },
   { path: "/category/:categoryBrand", element: <ItemCategoryContainer /> },
+  { path: "/cart", element: <Cart /> },
 ];
 // const [cartContextDou, setContextDou] = useState(false);
 

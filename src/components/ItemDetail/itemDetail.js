@@ -1,12 +1,23 @@
 import { ItemCount } from "../ItemCount/itemCount";
 import { Card } from "react-bootstrap";
+import { useState } from "react";
+// import { Link } from "react-router-dom";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { DetailModal } from "../Modals/detailModal";
 
 export const ItemDetail = ({ item }) => {
+  const [modal, setModal] = useState(false);
+
+  const onAdd = () => {
+    setModal(true);
+  };
+
+  const handleClose = () => setModal(false);
   return (
     <div className="containerItem">
       <div>
         <Card.Img className="imgDetail" variant="top" src={item.photo} />
-        {/* <img className="cardImg" src="http://mistillas.cl/wp-content/uploads/2018/04/Nike-Epic-React-Flyknit-%E2%80%9CPearl-Pink%E2%80%9D-01.jpg"/> */}
       </div>
       <div className="product">
         <p>{item.brand}</p>
@@ -14,7 +25,19 @@ export const ItemDetail = ({ item }) => {
         <h2>${item.price}</h2>
         <p className="desc">{item.description}</p>
         <div className="divButtonCardDetail">
-          <button className="buttonCardDetail add">Add to Cart</button>
+          {modal && (
+            <DetailModal
+              centered
+              className="modalAddToCart"
+              show={modal}
+              onHide={handleClose}
+              animation={false}
+            />
+          )}
+
+          <button className="buttonCardDetail add" onClick={onAdd}>
+            Add to Cart
+          </button>
         </div>
         <ItemCount initial={1} stock={5} />
       </div>

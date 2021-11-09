@@ -1,15 +1,15 @@
 [
   {
     "id": "1",
-    "brand": "jordan",
-    "title": "Jordan 4 Retro Red Thunder",
-    "description": "Zapatilla Jordan 4. Colorway: Rojo y negro, hasta talle 15US",
-    "price": 300,
-    "photo": "https://images.stockx.com/images/Air-Jordan-4-Retro-Red-Thunder-Product.jpg?fit=fill&bg=FFFFFF&w=300&h=214&auto=format,compress&trim=color&q=90&dpr=2&updated_at=1634306815"
+    "category": "tijera",
+    "title": "Tijera de Barbería y Peluquería 6 pulgadas Filo Laser Mundial",
+    "description": "Exclusiva tijera acero inoxidable filo láser para barbería y cortes. Amortiguador que suaviza los movimientos Mango recto. Corte preciso Tornillo de ajuste para regular la presión de las hojas 2032",
+    "price": 5440,
+    "photo": "https://www.barbershop.com.ar/product_images/m/727/518767__96262_zoom.jpg"
   },
   {
     "id": "2",
-    "brand": "adidas",
+    "category": "adidas",
     "title": "Adidas Yeezy Boost 350 V2 MX Oat",
     "description": "Zapatilla Adidas Yeezy de Kanye West en su version 2",
     "price": 220,
@@ -17,7 +17,7 @@
   },
   {
     "id": "3",
-    "brand": "reebok",
+    "category": "reebok",
     "title": "Reebok Club C Keith Haring Pop Shop Walls",
     "description": "Zapatilla Reebok. Salio al mercado el 20/10/2021",
     "price": 80,
@@ -25,7 +25,7 @@
   },
   {
     "id": "4",
-    "brand": "jordan",
+    "category": "jordan",
     "title": "Jordan 12 Retro Royalty Taxi",
     "description": "Zapatilla Jordan 12. Colorway: White/Black-Metallic Gold",
     "price": 190,
@@ -33,7 +33,7 @@
   },
   {
     "id": "5",
-    "brand": "nike",
+    "category": "nike",
     "title": "Nike Air Foamposite One Comme Des Garcons Homme Plus White",
     "description": "Zapatilla Nike Foamposite. Colorway: White, hasta talle 15US",
     "price": 520,
@@ -41,7 +41,7 @@
   },
   {
     "id": "6",
-    "brand": "adidas",
+    "category": "adidas",
     "title": "Adidas Forum Low Midwest Kids Black Gum",
     "description": "Zapatilla Adidas Forum. Ohio-based streetwear label Midwest Kids debuted their first adidas collaboration with the adidas Forum Low Midwest Kids.",
     "price": 100,
@@ -49,7 +49,7 @@
   },
   {
     "id": "7",
-    "brand": "reebok",
+    "category": "reebok",
     "title": "Reebok Club C Keith Haring Pop Shop Walls",
     "description": "Zapatilla Reebok. Salio al mercado el 20/10/2021",
     "price": 80,
@@ -57,7 +57,7 @@
   },
   {
     "id": "8",
-    "brand": "nike",
+    "category": "nike",
     "title": "Nike Air Force 1 Low '07 PRM Halloween (2021)",
     "description": "Clasica zapatilla de nike, esta vez en su version Halloween",
     "price": 130,
