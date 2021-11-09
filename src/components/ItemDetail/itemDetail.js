@@ -1,9 +1,6 @@
 import { ItemCount } from "../ItemCount/itemCount";
 import { Card } from "react-bootstrap";
 import { useState } from "react";
-// import { Link } from "react-router-dom";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { DetailModal } from "../Modals/detailModal";
 
 export const ItemDetail = ({ item }) => {
@@ -26,13 +23,7 @@ export const ItemDetail = ({ item }) => {
         <p className="desc">{item.description}</p>
         <div className="divButtonCardDetail">
           {modal && (
-            <DetailModal
-              centered
-              className="modalAddToCart"
-              show={modal}
-              onHide={handleClose}
-              animation={false}
-            />
+            <DetailModal show={modal} onHide={handleClose} animation={false} />
           )}
 
           <button className="buttonCardDetail add" onClick={onAdd}>

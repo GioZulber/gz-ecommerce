@@ -20,9 +20,9 @@ const spin = keyframes`
     transform: rotate(45deg);
     border-bottom-color: #721111;
   }
-  40% {
+  /* 40% {
     transform: rotate(-45deg);
-  }
+  } */
   80% {
     border-bottom-color: #b51e1e;
   }
@@ -38,6 +38,7 @@ const Spinner = styled.div`
   height: 45px;
   border-radius: 50%;
   border-bottom: 6px solid var(--redDark);
+  border-top: 6px solid var(--redDark);
   animation: ${spin} 2.5s ease-out infinite forwards;
 `;
 const Container = styled.div`

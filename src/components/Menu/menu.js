@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NavLink } from "react-router-dom";
 import { Nav, NavDropdown } from "react-bootstrap";
 const categories = [
-  { url: "jordan", label: "Jordan" },
+  { url: "tijera", label: "Tijeras" },
   { url: "nike", label: "Nike" },
   { url: "reebok", label: "Reebok" },
   { url: "adidas", label: "Adidas" },

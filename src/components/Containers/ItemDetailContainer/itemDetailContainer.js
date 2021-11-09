@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ItemDetail } from "../../ItemDetail/itemDetail";
-import Products from "../../../Products.json";
+import Products from "../../../data/Products.json";
 export const ItemDetailContainer = () => {
   const { itemId } = useParams();
   const [product, setProduct] = useState(null);
@@ -20,7 +20,6 @@ export const ItemDetailContainer = () => {
   }, [itemId]);
   console.log(product);
 
-  if (!product) return null;
   return (
     <>
       <div className="container">

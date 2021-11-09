@@ -1,0 +1,40 @@
+.modalAddToCart {
+  text-align: center;
+  .buttonContinue {
+    color: $white;
+    padding: 0.4rem;
+    border-radius: 0.25rem;
+    background-color: #03c203;
+    border: 1px solid transparent;
+    &:hover {
+      background-color: rgba(#03c203, 0.7);
+      transition: 1s;
+    }
+  }
+  .buttonGoToCart {
+    color: $white;
+    padding: 0.4rem;
+    border-radius: 0.25rem;
+    background-color: $red;
+    border: 1px solid transparent;
+    &:hover {
+      background-color: rgba($red, 0.7);
+      transition: 1s;
+    }
+  }
+}
+
+.countModal {
+  text-align: center;
+  .buttonOk {
+    color: $white;
+    padding: 0.4rem;
+    border-radius: 0.25rem;
+    background-color: #03c203;
+    border: 1px solid transparent;
+    &:hover {
+      background-color: rgba(#03c203, 0.7);
+      transition: 1s;
+    }
+  }
+}

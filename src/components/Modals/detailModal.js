@@ -1,19 +1,30 @@
-import { Modal, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { Modal } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+// import ModalHeader from "react-bootstrap/esm/ModalHeader";
 export const DetailModal = (props) => {
   return (
     <>
-      <Modal show={props.modal} handleClose={props.handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+      <Modal
+        className="modalAddToCart"
+        show={props.show}
+        handleClose={props.onHide}
+      >
+        <Modal.Body>
+          <Modal.Title>Producto añadido correctamente</Modal.Title>
+          Que desea hacer?
+        </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={props.onHide}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={props.onHide}>
-            Save Changes
-          </Button>
+          <Link to="/">
+            <button className="buttonContinue">Seguir comprando</button>
+          </Link>
+
+          <Link to="/cart">
+            <button className="buttonGoToCart">
+              <FontAwesomeIcon icon={faShoppingCart} /> Ir al carrito
+            </button>
+          </Link>
         </Modal.Footer>
       </Modal>
     </>

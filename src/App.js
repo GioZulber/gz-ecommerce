@@ -11,7 +11,7 @@ const routes = [
   { path: "/", element: <ItemListContainer /> },
   { path: "/details/:itemId", element: <ItemDetailContainer /> },
   { path: "/category", element: <ItemListContainer /> },
-  { path: "/category/:categoryBrand", element: <ItemCategoryContainer /> },
+  { path: "/category/:categoryId", element: <ItemCategoryContainer /> },
   { path: "/cart", element: <Cart /> },
 ];
 // const [cartContextDou, setContextDou] = useState(false);

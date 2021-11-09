@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Item } from "../Item/item";
-import Products from "../../Products.json";
+import Products from "../../data/Products.json";
 import { Loader } from "../Loader/loader";
 export const ItemList = () => {
   const [products, setProducts] = useState([]);
