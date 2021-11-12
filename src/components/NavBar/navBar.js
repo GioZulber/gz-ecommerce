@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import logo from "../../images/logo-final.png";
 import { Menu } from "../Menu/menu";
-import { CartWidget } from "../CartWidget/cartWidget";
+import { CartWidget } from "../Cart/CartWidget/cartWidget";
 
 export const NavBar = () => {
   const [open, setOpen] = useState(false);

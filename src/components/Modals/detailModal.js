@@ -6,11 +6,8 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 export const DetailModal = (props) => {
   return (
     <>
-      <Modal
-        className="modalAddToCart"
-        show={props.show}
-        handleClose={props.onHide}
-      >
+      <Modal className="modalAddToCart" show={props.show} onHide={props.onHide}>
+        <Modal.Header closeButton></Modal.Header>
         <Modal.Body>
           <Modal.Title>Producto añadido correctamente</Modal.Title>
           Que desea hacer?

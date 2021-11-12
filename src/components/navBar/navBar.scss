@@ -55,18 +55,16 @@ nav {
       color: $dark;
       text-decoration: none;
     }
-    .cartWidget {
-      margin: 1rem;
+    .iconUser {
+      margin-left: 0.8rem;
+    }
+    .cartLength {
+      font-size: 1rem;
     }
   }
 }
 @media only screen and (max-width: 960px) {
   nav {
-    .cartWidget {
-      position: relative;
-      left: 8rem;
-      margin-right: 1rem;
-    }
     .icon {
       display: flex;
       justify-content: center;

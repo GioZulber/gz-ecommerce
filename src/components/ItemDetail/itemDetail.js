@@ -1,18 +1,16 @@
 import { ItemCount } from "../ItemCount/itemCount";
 import { Card } from "react-bootstrap";
-import { useState } from "react";
-import { DetailModal } from "../Modals/detailModal";
+import { useCartContext } from "../../context/cartContext";
 
 export const ItemDetail = ({ item }) => {
-  const [modal, setModal] = useState(false);
+  const { setCart, addItem } = useCartContext();
 
-  const onAdd = () => {
-    setModal(true);
+  const onAdd = (count) => {
+    setCart(count);
+    addItem(item, count);
   };
-
-  const handleClose = () => setModal(false);
   return (
-    <div className="containerItem">
+    <div key={item.id} className="containerItem">
       <div>
         <Card.Img className="imgDetail" variant="top" src={item.photo} />
       </div>
@@ -21,16 +19,7 @@ export const ItemDetail = ({ item }) => {
         <h1 className="h1CardDetail">{item.title}</h1>
         <h2>${item.price}</h2>
         <p className="desc">{item.description}</p>
-        <div className="divButtonCardDetail">
-          {modal && (
-            <DetailModal show={modal} onHide={handleClose} animation={false} />
-          )}
-
-          <button className="buttonCardDetail add" onClick={onAdd}>
-            Add to Cart
-          </button>
-        </div>
-        <ItemCount initial={1} stock={5} />
+        <ItemCount initial={1} stock={5} onAdd={onAdd} />
       </div>
       <div className="slideshow-buttons">
         <div className="oneD"></div>
