@@ -16,11 +16,10 @@ export const Cart = () => {
                 key={i.item.id}
                 id={i.item.id}
                 title={i.item.title}
-                quantity={i.quantity}
                 image={i.item.photo}
                 price={i.item.price}
+                counter={i.counter}
               />
-              <Buttoncito onClick={clearCart}>Vaciar Carrito</Buttoncito>
             </>
           ))
         ) : (
@@ -33,6 +32,7 @@ export const Cart = () => {
             </MyContainer>
           </>
         )}
+        <Buttoncito onClick={clearCart}>Vaciar Carrito</Buttoncito>
       </Container>
     </>
   );

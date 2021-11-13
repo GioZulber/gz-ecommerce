@@ -6,10 +6,9 @@ import styled from "styled-components";
 export const ItemCart = ({ id, title, quantity, image, price }) => {
   const { removeItem } = useCartContext();
 
-  //   const handleRemove = () => removeItem(id);
   return (
     <>
-      <Container>
+      <Container key={id}>
         <CardCart>
           <CardImg src={image} />
           <CardColumn>
