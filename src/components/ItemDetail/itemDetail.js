@@ -3,10 +3,10 @@ import { Card } from "react-bootstrap";
 import { useCartContext } from "../../context/cartContext";
 
 export const ItemDetail = ({ item }) => {
-  const { addItem } = useCartContext();
+  const { addItem, setCart } = useCartContext();
 
   const onAdd = (count) => {
-    // setCart(count);
+    setCart(count);
     addItem(item, count);
   };
   return (
