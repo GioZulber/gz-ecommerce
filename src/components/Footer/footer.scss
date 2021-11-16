@@ -2,13 +2,14 @@
 
 footer {
   background-color: $dark;
-  padding: 0.01rem;
+  padding: 1rem;
   .divContainer {
     .divFooter {
       display: flex;
       justify-content: space-between;
       .divFooterTitle {
         color: $white;
+        font-family: "Open Sans", serif;
         font-size: 1em;
         font-weight: bolder;
       }

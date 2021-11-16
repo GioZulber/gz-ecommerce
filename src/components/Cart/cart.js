@@ -5,7 +5,8 @@ import { useCartContext } from "../../context/cartContext";
 import { ItemCart } from "../ItemCart/itemCart";
 
 export const Cart = () => {
-  const { cart, clearCart } = useCartContext();
+  const { cart, clearCart, totalPrice } = useCartContext();
+
   return (
     <>
       <Container>
@@ -18,7 +19,7 @@ export const Cart = () => {
                 title={i.item.title}
                 image={i.item.photo}
                 price={i.item.price}
-                quantity={i.counter}
+                quantity={i.quantity}
               />
             </>
           ))
@@ -27,12 +28,15 @@ export const Cart = () => {
             <MyContainer>
               <h1>Su carrito esta vacio!</h1>
               <Link to="/">
-                <Buttoncito>Ir a home</Buttoncito>
+                <Buttoncito>Ir a Inicio</Buttoncito>
               </Link>
             </MyContainer>
           </>
         )}
-        <Buttoncito onClick={clearCart}>Vaciar Carrito</Buttoncito>
+        <ButtonsAndTotal>
+          <h3 style={{ fontWeight: "bold" }}>Precio Total: ${totalPrice()} </h3>
+          <Buttoncito onClick={clearCart}>Vaciar Carrito</Buttoncito>
+        </ButtonsAndTotal>
       </Container>
     </>
   );
@@ -57,4 +61,10 @@ const Buttoncito = styled.button`
     background-color: #721111;
     transition: 1s;
   }
+`;
+
+const ButtonsAndTotal = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 `;
