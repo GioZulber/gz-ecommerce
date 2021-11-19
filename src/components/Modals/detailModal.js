@@ -9,6 +9,7 @@ export const DetailModal = (props) => {
       <Modal className="modalAddToCart" show={props.show} onHide={props.onHide}>
         <Modal.Header closeButton></Modal.Header>
         <Modal.Body>
+          <FontAwesomeIcon className="iconCartHeader" icon={faShoppingCart} />
           <Modal.Title>Producto añadido correctamente</Modal.Title>
           Que desea hacer?
         </Modal.Body>

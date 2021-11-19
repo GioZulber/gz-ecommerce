@@ -1,24 +1,24 @@
+import { getFirestore } from "../../../firebase";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router";
 import { ItemDetail } from "../../ItemDetail/itemDetail";
 import { Loader } from "../../Loader/loader";
-import Products from "../../../data/Products.json";
+import { getDoc, doc } from "@firebase/firestore";
 export const ItemDetailContainer = () => {
+  // const { itemId } = useParams();
   const [product, setProduct] = useState(null);
-  const { itemId } = useParams();
-  const getItem = (data) =>
-    new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(data);
-      }, 1000);
-    });
+
   useEffect(() => {
-    getItem(Products)
-      .then((result) =>
-        setProduct(result.find((element) => element.id === itemId))
-      )
-      .catch((err) => console.log("Catch: " + err));
-  }, [itemId]);
+    const db = getFirestore();
+    const itemSelect = doc(db, "items", "61zSCld6EXSfjeTQz7lD");
+    getDoc(itemSelect).then((snapshot) => {
+      if (snapshot.exists()) {
+        setProduct(snapshot.data());
+      }
+    });
+
+    // console.log("error arriba");
+  }, []);
 
   return (
     <>

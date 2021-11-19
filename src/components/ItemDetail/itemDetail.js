@@ -12,31 +12,16 @@ export const ItemDetail = ({ item }) => {
   return (
     <div key={item.id} className="containerItem">
       <div>
-        <Card.Img className="imgDetail" variant="top" src={item.photo} />
+        <Card.Img className="imgDetail" variant="top" src={item.image} />
       </div>
       <div className="product">
-        <p>{item.brand}</p>
+        <p>{item.categoryId}</p>
         <h1 className="h1CardDetail">{item.title}</h1>
         <h2>${item.price}</h2>
         <p className="desc">{item.description}</p>
-        <ItemCount initial={1} stock={5} onAdd={onAdd} />
-      </div>
-      <div className="slideshow-buttons">
-        <div className="oneD"></div>
-        <div className="twoD"></div>
-        <div className="threeD"></div>
-        <div className="fourD"></div>
-      </div>
-      <p className="pick">Choose size</p>
-      <div className="sizes">
-        <div className="size">5</div>
-        <div className="size">6</div>
-        <div className="size">7</div>
-        <div className="size">8</div>
-        <div className="size">9</div>
-        <div className="size">10</div>
-        <div className="size">11</div>
-        <div className="size">12</div>
+        <div className="counterDetail">
+          <ItemCount initial={1} stock={5} onAdd={onAdd} />
+        </div>
       </div>
     </div>
   );

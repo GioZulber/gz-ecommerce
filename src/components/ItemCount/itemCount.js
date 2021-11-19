@@ -37,16 +37,6 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
 
   return (
     <>
-      <div className="divButtonCardDetail">
-        {modal && (
-          <DetailModal show={modal} onHide={handleClose} animation={false} />
-        )}
-
-        <button className="buttonCardDetail add" onClick={handleAdd}>
-          Add to Cart
-        </button>
-      </div>
-
       <div className="counter">
         {modalDec && (
           <SubCountModal
@@ -60,7 +50,6 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
           -{" "}
         </Button>
         <p className="pCounter"> {count} </p>
-        {/* probar con un ternario */}
         {modalAdd && (
           <AddCountModal
             show={modalAdd}
@@ -72,6 +61,15 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
           {" "}
           +{" "}
         </Button>
+      </div>
+      <div className="divButtonCardDetail">
+        {modal && (
+          <DetailModal show={modal} onHide={handleClose} animation={false} />
+        )}
+
+        <button className="buttonCardDetail add" onClick={handleAdd}>
+          Add to Cart
+        </button>
       </div>
     </>
   );

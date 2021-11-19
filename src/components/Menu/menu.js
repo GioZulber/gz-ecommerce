@@ -9,9 +9,8 @@ import { NavLink } from "react-router-dom";
 import { Nav, NavDropdown } from "react-bootstrap";
 const categories = [
   { url: "tijera", label: "Tijeras" },
-  { url: "nike", label: "Nike" },
-  { url: "reebok", label: "Reebok" },
-  { url: "adidas", label: "Adidas" },
+  { url: "maquina", label: "Maquinas" },
+  { url: "accesorio", label: "Accesorios" },
 ];
 export const Menu = ({ className }) => {
   const defaultClass = "linksMenu ";

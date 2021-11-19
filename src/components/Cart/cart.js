@@ -17,7 +17,7 @@ export const Cart = () => {
                 key={i.item.id}
                 id={i.item.id}
                 title={i.item.title}
-                image={i.item.photo}
+                image={i.item.image}
                 price={i.item.price}
                 quantity={i.quantity}
               />
@@ -34,8 +34,9 @@ export const Cart = () => {
           </>
         )}
         <ButtonsAndTotal>
-          <h3 style={{ fontWeight: "bold" }}>Precio Total: ${totalPrice()} </h3>
           <Buttoncito onClick={clearCart}>Vaciar Carrito</Buttoncito>
+          <h3 style={{ fontWeight: "bold" }}>Total: ${totalPrice()} </h3>
+          <Buttoncito>Finalizar Compra</Buttoncito>
         </ButtonsAndTotal>
       </Container>
     </>
