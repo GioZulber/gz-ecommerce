@@ -8,7 +8,7 @@ export const Item = ({ items }) => {
         <Card.Body>
           <Card.Title>{items.title}</Card.Title>
           <p className="cardPrice"> ${items.price}</p>
-          <NavLink to={`/details/${items.id}`}>
+          <NavLink to={`/item/${items.id}`}>
             <Button variant="danger" className="buttonItem">
               Ver más
             </Button>

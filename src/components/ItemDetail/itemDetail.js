@@ -11,11 +11,10 @@ export const ItemDetail = ({ item }) => {
   };
   return (
     <div key={item.id} className="containerItem">
-      <div>
+      <div className="divCardImg">
         <Card.Img className="imgDetail" variant="top" src={item.image} />
       </div>
       <div className="product">
-        <p>{item.categoryId}</p>
         <h1 className="h1CardDetail">{item.title}</h1>
         <h2>${item.price}</h2>
         <p className="desc">{item.description}</p>

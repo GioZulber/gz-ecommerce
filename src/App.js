@@ -8,7 +8,7 @@ import { Cart } from "./components/Cart/cart";
 import { CartProvider } from "./context/cartContext";
 const routes = [
   { path: "/", element: <ItemListContainer /> },
-  { path: "/details/:itemId", element: <ItemDetailContainer /> },
+  { path: "/item/:itemId", element: <ItemDetailContainer /> },
   { path: "/category", element: <ItemListContainer /> },
   { path: "/category/:categoryId", element: <ItemListContainer /> },
   { path: "/cart", element: <Cart /> },
