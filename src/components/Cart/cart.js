@@ -1,7 +1,10 @@
+import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { useCartContext } from "../../context/cartContext";
+import { FormCart } from "../Forms/formCart";
 import { ItemCart } from "../ItemCart/itemCart";
 
 export const Cart = () => {
@@ -27,17 +30,29 @@ export const Cart = () => {
           <>
             <MyContainer>
               <h1>Su carrito esta vacio!</h1>
+            </MyContainer>
+          </>
+        )}
+        {cart.length ? (
+          <>
+            <ButtonsAndTotal>
+              <Buttoncito onClick={clearCart}>Vaciar Carrito</Buttoncito>
+              <h3 style={{ fontWeight: "bold" }}>Total: ${totalPrice()} </h3>
+            </ButtonsAndTotal>
+            <FormCart />
+          </>
+        ) : (
+          <>
+            <MyContainer>
               <Link to="/">
-                <Buttoncito>Ir a Inicio</Buttoncito>
+                <Buttoncito>
+                  {" "}
+                  Ir a Inicio <FontAwesomeIcon icon={faHome} />
+                </Buttoncito>
               </Link>
             </MyContainer>
           </>
         )}
-        <ButtonsAndTotal>
-          <Buttoncito onClick={clearCart}>Vaciar Carrito</Buttoncito>
-          <h3 style={{ fontWeight: "bold" }}>Total: ${totalPrice()} </h3>
-          <Buttoncito>Finalizar Compra</Buttoncito>
-        </ButtonsAndTotal>
       </Container>
     </>
   );

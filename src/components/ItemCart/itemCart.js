@@ -28,16 +28,13 @@ export const ItemCart = ({ id, title, quantity, image, price }) => {
 };
 
 const Buttoncito = styled.button`
-  color: #ffffff;
+  color: #ff9a01;
+  font-size: 1.3em;
   margin: 1rem;
   padding: 0.5rem;
   border-radius: 0.25rem;
-  background-color: #ff9a01;
+  background-color: transparent;
   border: 1px solid transparent;
-  &:hover {
-    background-color: #fab347;
-    transition: 1s;
-  }
 `;
 
 const CardDeleteI = styled.div``;

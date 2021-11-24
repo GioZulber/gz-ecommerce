@@ -7,24 +7,7 @@ import { collection, getDocs, query, where } from "@firebase/firestore";
 export const ItemList = () => {
   const [products, setProducts] = useState([]);
   const { categoryId } = useParams();
-  // const getItem = (data) =>
-  // new Promise((resolve) => {
-  //     setTimeout(() => {
-  //       resolve(data);
-  //       console.log(data);
-  //     }, 2000);
-  //   });
-  // useEffect(() => {
-  //   getItem(Products)
-  //     .then((result) =>
-  //       categoryId
-  //         ? setProducts(
-  //             result.filter((element) => element.category === categoryId)
-  //           )
-  //         : setProducts(Products)
-  //     )
-  //     .catch((err) => console.log("Catch: " + err));
-  // }, [categoryId]);
+
   useEffect(() => {
     const db = getFirestore();
     const q = categoryId

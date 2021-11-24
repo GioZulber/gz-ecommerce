@@ -16,10 +16,13 @@ export const ItemDetail = ({ item }) => {
       </div>
       <div className="product">
         <h1 className="h1CardDetail">{item.title}</h1>
-        <h2>${item.price}</h2>
+        <div>
+          <h2>${item.price}</h2>
+          <p>Stock: {item.stock}</p>
+        </div>
         <p className="desc">{item.description}</p>
         <div className="counterDetail">
-          <ItemCount initial={1} stock={5} onAdd={onAdd} />
+          <ItemCount initial={1} stock={item.stock} onAdd={onAdd} />
         </div>
       </div>
     </div>

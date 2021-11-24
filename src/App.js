@@ -6,12 +6,14 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Footer } from "./components/Footer/footer";
 import { Cart } from "./components/Cart/cart";
 import { CartProvider } from "./context/cartContext";
+import { FormContact } from "./components/Forms/formContact";
 const routes = [
   { path: "/", element: <ItemListContainer /> },
   { path: "/item/:itemId", element: <ItemDetailContainer /> },
   { path: "/category", element: <ItemListContainer /> },
   { path: "/category/:categoryId", element: <ItemListContainer /> },
   { path: "/cart", element: <Cart /> },
+  { path: "/contacto", element: <FormContact /> },
 ];
 
 function App() {

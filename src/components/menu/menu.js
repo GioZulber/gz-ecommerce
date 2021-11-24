@@ -1,8 +1,4 @@
-import {
-  faHome,
-  faIdBadge,
-  faShoppingBag,
-} from "@fortawesome/free-solid-svg-icons";
+import { faHome, faIdBadge } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { NavLink } from "react-router-dom";
@@ -35,9 +31,6 @@ export const Menu = ({ className }) => {
 
       <NavLink to="/contacto" activeClassName="active">
         <FontAwesomeIcon icon={faIdBadge} /> Contacto
-      </NavLink>
-      <NavLink to="/ayuda" activeClassName="active">
-        <FontAwesomeIcon icon={faShoppingBag} /> Como comprar
       </NavLink>
     </div>
   );

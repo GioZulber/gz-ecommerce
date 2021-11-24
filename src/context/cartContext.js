@@ -11,7 +11,7 @@ export const CartProvider = ({ children }) => {
 
   const addItem = (item, quantity) => {
     //Busco el item comparando el id
-    const isInCart = cart.findIndex((i) => i.item.id === item.id);
+    const isInCart = cart.findIndex((i) => i.item.title === item.title);
     if (isInCart > -1) {
       //Busco la cantidad del item
       const oldQuantity = cart[isInCart].quantity;
