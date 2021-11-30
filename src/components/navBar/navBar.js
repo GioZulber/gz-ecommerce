@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../../images/logo-final.png";
+import logo from "../../images/logoBarberFinal.png";
 import { Menu } from "../Menu/menu";
 import { CartWidget } from "../Cart/CartWidget/cartWidget";
 

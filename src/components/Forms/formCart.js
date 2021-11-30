@@ -11,6 +11,8 @@ export const FormCart = () => {
     orderName: "",
     phone: "",
     email: "",
+    city: "",
+    address: "",
   });
 
   const totalPriceOrder = totalPrice();
@@ -21,15 +23,21 @@ export const FormCart = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const cartItems = cart.map(
-      (i) => ` ${i.item.title} - Cantidad:${i.quantity} Precio: ${i.item.price}`
-    );
+    const cartItems = cart.map((i) => {
+      return {
+        title: i.item.title,
+        quantity: i.quantity,
+        price: i.item.price,
+      };
+    });
 
     const order = {
       buyer: {
         orderName: formData.orderName,
         phone: formData.phone,
         email: formData.email,
+        city: formData.city,
+        address: formData.address,
       },
       items: [{ cartItems }],
       totalPriceOrder,
@@ -40,20 +48,23 @@ export const FormCart = () => {
     const ordersCollection = collection(db, "orders");
 
     addDoc(ordersCollection, order)
-      .then((response) =>
+      .then(({ id }) =>
         alert(
-          `Muchas gracias por su compra ${formData.orderName}. Su id de seguimiento es: ${response.id}`
+          `Muchas gracias por su compra ${formData.orderName}. Su id de seguimiento es: ${id}`
         )
       )
       .then(
+        //Seteo la data devuelta en blanco.
         setFormData({
           orderName: "",
           phone: "",
           email: "",
+          city: "",
         })
       )
       .catch((err) => console.log(err))
       .finally(() => {
+        //Si esto lo hacia en el .then anterior quedaba muy feo, preferi utilizar el finally ()
         clearCart();
       });
   };
@@ -97,9 +108,38 @@ export const FormCart = () => {
           />
         </Form.Group>
 
+        <Form.Group as={Col}>
+          <Form.Label>Ciudad</Form.Label>
+          <Form.Control
+            required
+            name="city"
+            type="text"
+            onChange={inputChange}
+            value={formData.city}
+          />
+        </Form.Group>
+        <Form.Group as={Col}>
+          <Form.Label>Direccion</Form.Label>
+          <Form.Control
+            required
+            name="address"
+            type="text"
+            placeholder="Avenida Siempre Viva 742"
+            onChange={inputChange}
+            value={formData.address}
+          />
+        </Form.Group>
         <Buttoncito
           type="submit"
-          disabled={!(formData.orderName && formData.email && formData.phone)}
+          disabled={
+            !(
+              formData.orderName &&
+              formData.email &&
+              formData.phone &&
+              formData.city &&
+              formData.address
+            )
+          }
           onClick={handleSubmit}
         >
           Finalizar Compra

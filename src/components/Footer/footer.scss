@@ -27,5 +27,19 @@ footer {
         }
       }
     }
+    .divNombre {
+      margin-top: 2rem;
+      text-align: center;
+      .linkedinLink {
+        color: grey;
+        .linkedinIcon {
+          font-size: 1.3em;
+          &:hover {
+            cursor: pointer;
+            color: $redDark;
+          }
+        }
+      }
+    }
   }
 }

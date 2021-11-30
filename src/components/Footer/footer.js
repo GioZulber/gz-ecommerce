@@ -1,4 +1,8 @@
-import { faInstagram, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import {
+  faInstagram,
+  faLinkedin,
+  faWhatsapp,
+} from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const Footer = () => {
@@ -33,6 +37,17 @@ export const Footer = () => {
               </li>
             </ul>
           </div>
+        </div>
+        <div className="divNombre">
+          <p>
+            Hecho por Giovanni Zulberti{" "}
+            <a
+              href="https://www.linkedin.com/in/giovanni-zulberti/"
+              className="linkedinLink"
+            >
+              <FontAwesomeIcon className="linkedinIcon" icon={faLinkedin} />
+            </a>
+          </p>
         </div>
       </div>
     </footer>
