@@ -3,7 +3,7 @@ import { Form, Col } from "react-bootstrap";
 import { getFirestore } from "../../firebase";
 import { useCartContext } from "../../context/cartContext";
 import { useState } from "react";
-import { addDoc, collection } from "@firebase/firestore";
+import { addDoc, collection, updateDoc, doc } from "@firebase/firestore";
 export const FormCart = () => {
   const { clearCart, cart, totalPrice } = useCartContext();
 
@@ -48,19 +48,27 @@ export const FormCart = () => {
     const ordersCollection = collection(db, "orders");
 
     addDoc(ordersCollection, order)
-      .then(({ id }) =>
+      .then(({ id }) => {
         alert(
           `Muchas gracias por su compra ${formData.orderName}. Su id de seguimiento es: ${id}`
-        )
-      )
+        );
+        cart.forEach((element) => {
+          const normalStock = doc(db, "items", element.id);
+          updateDoc(normalStock, {
+            stock: element.item.stock - element.quantity,
+          });
+        });
+      })
       .then(
+        () => {
+          setFormData({
+            orderName: "",
+            phone: "",
+            email: "",
+            city: "",
+          });
+        }
         //Seteo la data devuelta en blanco.
-        setFormData({
-          orderName: "",
-          phone: "",
-          email: "",
-          city: "",
-        })
       )
       .catch((err) => console.log(err))
       .finally(() => {
