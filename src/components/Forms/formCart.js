@@ -28,6 +28,7 @@ export const FormCart = () => {
         title: i.item.title,
         quantity: i.quantity,
         price: i.item.price,
+        stock: i.item.stock,
       };
     });
 
@@ -52,24 +53,22 @@ export const FormCart = () => {
         alert(
           `Muchas gracias por su compra ${formData.orderName}. Su id de seguimiento es: ${id}`
         );
-        cart.forEach((element) => {
+      })
+      .then(() => {
+        cartItems.forEach((element) => {
           const normalStock = doc(db, "items", element.id);
           updateDoc(normalStock, {
             stock: element.item.stock - element.quantity,
           });
         });
-      })
-      .then(
-        () => {
-          setFormData({
-            orderName: "",
-            phone: "",
-            email: "",
-            city: "",
-          });
-        }
         //Seteo la data devuelta en blanco.
-      )
+        setFormData({
+          orderName: "",
+          phone: "",
+          email: "",
+          city: "",
+        });
+      })
       .catch((err) => console.log(err))
       .finally(() => {
         //Si esto lo hacia en el .then anterior quedaba muy feo, preferi utilizar el finally ()

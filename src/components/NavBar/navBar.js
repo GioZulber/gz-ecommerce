@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import logo from "../../images/logoBarberFinal.png";
 import { Menu } from "../Menu/menu";
 import { CartWidget } from "../Cart/CartWidget/cartWidget";
+import { NavLink } from "react-router-dom";
 
 export const NavBar = () => {
   const [open, setOpen] = useState(false);
@@ -11,9 +12,11 @@ export const NavBar = () => {
 
   return (
     <nav>
-      <div className="logo">
-        <img src={logo} alt="logo" />
-      </div>
+      <NavLink to="/">
+        <div className="logo">
+          <img src={logo} alt="logo" />
+        </div>
+      </NavLink>
 
       <Menu className={open ? "two" : "one"} />
 

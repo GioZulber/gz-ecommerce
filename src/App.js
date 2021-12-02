@@ -7,6 +7,7 @@ import { Footer } from "./components/Footer/footer";
 import { Cart } from "./components/Cart/cart";
 import { CartProvider } from "./context/cartContext";
 import { FormContact } from "./components/Forms/formContact";
+import { NotFound } from "./components/NotFound/notFound";
 const routes = [
   { path: "/", element: <ItemListContainer /> },
   { path: "/item/:itemId", element: <ItemDetailContainer /> },
@@ -14,6 +15,7 @@ const routes = [
   { path: "/category/:categoryId", element: <ItemListContainer /> },
   { path: "/cart", element: <Cart /> },
   { path: "/contacto", element: <FormContact /> },
+  { path: "*", element: <NotFound /> },
 ];
 
 function App() {
