@@ -3,9 +3,19 @@ import { Form, Col } from "react-bootstrap";
 import { getFirestore } from "../../firebase";
 import { useCartContext } from "../../context/cartContext";
 import { useState } from "react";
-import { addDoc, collection, updateDoc, doc } from "@firebase/firestore";
+import { addDoc, collection } from "@firebase/firestore";
+import { CheckoutModal } from "../Modals/checkoutModal";
 export const FormCart = () => {
-  const { clearCart, cart, totalPrice } = useCartContext();
+  const { clearCart, cart, totalPrice, actStock } = useCartContext();
+  const [showModal, setShowModal] = useState(false);
+  const [orderId, setOrderId] = useState(null);
+
+  const handleClose = () => {
+    setShowModal(false);
+    clearCart();
+  };
+
+  const totalPriceOrder = totalPrice();
 
   const [formData, setFormData] = useState({
     orderName: "",
@@ -15,22 +25,12 @@ export const FormCart = () => {
     address: "",
   });
 
-  const totalPriceOrder = totalPrice();
-
   const inputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const cartItems = cart.map((i) => {
-      return {
-        title: i.item.title,
-        quantity: i.quantity,
-        price: i.item.price,
-        stock: i.item.stock,
-      };
-    });
 
     const order = {
       buyer: {
@@ -40,7 +40,7 @@ export const FormCart = () => {
         city: formData.city,
         address: formData.address,
       },
-      items: [{ cartItems }],
+      items: [...cart],
       totalPriceOrder,
     };
 
@@ -50,29 +50,23 @@ export const FormCart = () => {
 
     addDoc(ordersCollection, order)
       .then(({ id }) => {
-        alert(
-          `Muchas gracias por su compra ${formData.orderName}. Su id de seguimiento es: ${id}`
-        );
+        setOrderId(id);
+        setShowModal(true);
+        actStock();
       })
-      .then(() => {
-        cartItems.forEach((element) => {
-          const normalStock = doc(db, "items", element.id);
-          updateDoc(normalStock, {
-            stock: element.item.stock - element.quantity,
-          });
-        });
-        //Seteo la data devuelta en blanco.
+      .catch((err) => console.log(err))
+      .finally(() => {
         setFormData({
           orderName: "",
           phone: "",
           email: "",
           city: "",
+          address: "",
         });
-      })
-      .catch((err) => console.log(err))
-      .finally(() => {
-        //Si esto lo hacia en el .then anterior quedaba muy feo, preferi utilizar el finally ()
-        clearCart();
+        //Meti este timeout para darle tiempo al usuario de leer el id, sino directamente no abria el modal
+        setTimeout(() => {
+          clearCart();
+        }, 10000);
       });
   };
 
@@ -152,6 +146,14 @@ export const FormCart = () => {
           Finalizar Compra
         </Buttoncito>
       </Form>
+      {showModal && (
+        <CheckoutModal
+          show={showModal}
+          onHide={handleClose}
+          animation={false}
+          id={orderId}
+        />
+      )}
     </MyContainer>
   );
 };

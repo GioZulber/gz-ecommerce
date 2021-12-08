@@ -1,11 +1,13 @@
 import { Modal } from "react-bootstrap";
 
-export const SubCountModal = (props) => {
+export const CheckoutModal = (props) => {
   return (
     <Modal className="countModal" show={props.show} onHide={props.onHide}>
       <Modal.Header closeButton></Modal.Header>
       <Modal.Body>
-        <Modal.Title>No puede agregar 0 productos</Modal.Title>
+        <Modal.Title>
+          Muchas gracias por su compra, su id de seguimiento es: {props.id}
+        </Modal.Title>
       </Modal.Body>
       <Modal.Footer>
         <button className="buttonOk" onClick={props.onHide}>

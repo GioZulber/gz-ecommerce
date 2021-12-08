@@ -1,4 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import { getFirestore } from "../firebase";
+import { doc, updateDoc } from "@firebase/firestore";
 
 const CartContext = createContext();
 
@@ -22,6 +24,17 @@ export const CartProvider = ({ children }) => {
     } else {
       setCart([...cart, { item, quantity }]);
     }
+  };
+
+  const actStock = () => {
+    const db = getFirestore();
+
+    cart.forEach((element) => {
+      const normalStock = doc(db, "items", element.id);
+      updateDoc(normalStock, {
+        stock: element.item.stock - element.quantity,
+      });
+    });
   };
 
   useEffect(() => {
@@ -54,6 +67,7 @@ export const CartProvider = ({ children }) => {
         clearCart,
         totalItems,
         totalPrice,
+        actStock,
       }}
     >
       {children}
